@@ -56,10 +56,12 @@ public class Design extends javax.swing.JFrame {
         menu = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora");
         setResizable(false);
 
-        background.setBackground(new java.awt.Color(204, 208, 255));
-        background.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Calculadora", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 12), new java.awt.Color(0, 0, 0)))); // NOI18N
+        background.setBackground(new java.awt.Color(102, 102, 102));
+        background.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic Medium", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        background.setForeground(new java.awt.Color(255, 255, 255));
 
         painel.setEditable(false);
         painel.setBackground(new java.awt.Color(255, 255, 255));
@@ -72,7 +74,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        KeyVirgula.setBackground(new java.awt.Color(0, 0, 0));
         KeyVirgula.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        KeyVirgula.setForeground(new java.awt.Color(255, 255, 255));
         KeyVirgula.setText(",");
         KeyVirgula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +84,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn0.setBackground(new java.awt.Color(0, 0, 0));
         btn0.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn0.setForeground(new java.awt.Color(255, 255, 255));
         btn0.setText("0");
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +94,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnDouble0.setBackground(new java.awt.Color(0, 0, 0));
         btnDouble0.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnDouble0.setForeground(new java.awt.Color(255, 255, 255));
         btnDouble0.setText("00");
         btnDouble0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +104,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnIgual.setBackground(new java.awt.Color(0, 0, 0));
         btnIgual.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnIgual.setForeground(new java.awt.Color(255, 255, 255));
         btnIgual.setText("=");
         btnIgual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +114,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn1.setBackground(new java.awt.Color(0, 0, 0));
         btn1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn1.setForeground(new java.awt.Color(255, 255, 255));
         btn1.setText("1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +124,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn2.setBackground(new java.awt.Color(0, 0, 0));
         btn2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn2.setForeground(new java.awt.Color(255, 255, 255));
         btn2.setText("2");
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +134,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn3.setBackground(new java.awt.Color(0, 0, 0));
         btn3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn3.setForeground(new java.awt.Color(255, 255, 255));
         btn3.setText("3");
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +144,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnMais.setBackground(new java.awt.Color(0, 0, 0));
         btnMais.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnMais.setForeground(new java.awt.Color(255, 255, 255));
         btnMais.setText("+");
         btnMais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +154,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn4.setBackground(new java.awt.Color(0, 0, 0));
         btn4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn4.setForeground(new java.awt.Color(255, 255, 255));
         btn4.setText("4");
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,7 +164,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn5.setBackground(new java.awt.Color(0, 0, 0));
         btn5.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn5.setForeground(new java.awt.Color(255, 255, 255));
         btn5.setText("5");
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +174,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn6.setBackground(new java.awt.Color(0, 0, 0));
         btn6.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn6.setForeground(new java.awt.Color(255, 255, 255));
         btn6.setText("6");
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +184,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnMenos.setBackground(new java.awt.Color(0, 0, 0));
         btnMenos.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        btnMenos.setForeground(new java.awt.Color(255, 255, 255));
         btnMenos.setText("-");
         btnMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +194,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn7.setBackground(new java.awt.Color(0, 0, 0));
         btn7.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn7.setForeground(new java.awt.Color(255, 255, 255));
         btn7.setText("7");
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,7 +204,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn8.setBackground(new java.awt.Color(0, 0, 0));
         btn8.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn8.setForeground(new java.awt.Color(255, 255, 255));
         btn8.setText("8");
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,7 +214,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btn9.setBackground(new java.awt.Color(0, 0, 0));
         btn9.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btn9.setForeground(new java.awt.Color(255, 255, 255));
         btn9.setText("9");
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +224,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnVezes.setBackground(new java.awt.Color(0, 0, 0));
         btnVezes.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnVezes.setForeground(new java.awt.Color(255, 255, 255));
         btnVezes.setText("X");
         btnVezes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,7 +234,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnC.setBackground(new java.awt.Color(0, 0, 0));
         btnC.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnC.setForeground(new java.awt.Color(255, 255, 255));
         btnC.setText("CE");
         btnC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -208,7 +244,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnPotencia.setBackground(new java.awt.Color(0, 0, 0));
         btnPotencia.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnPotencia.setForeground(new java.awt.Color(255, 255, 255));
         btnPotencia.setText("^");
         btnPotencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,7 +254,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnRaiz.setBackground(new java.awt.Color(0, 0, 0));
         btnRaiz.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnRaiz.setForeground(new java.awt.Color(255, 255, 255));
         btnRaiz.setText("√");
         btnRaiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +264,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnDivisao.setBackground(new java.awt.Color(0, 0, 0));
         btnDivisao.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        btnDivisao.setForeground(new java.awt.Color(255, 255, 255));
         btnDivisao.setText("÷");
         btnDivisao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,7 +274,9 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        btnLeftDirecional.setBackground(new java.awt.Color(0, 0, 0));
         btnLeftDirecional.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnLeftDirecional.setForeground(new java.awt.Color(255, 255, 255));
         btnLeftDirecional.setText("⌫");
         btnLeftDirecional.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,6 +284,8 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        Preferencias.setBackground(new java.awt.Color(0, 0, 0));
+        Preferencias.setForeground(new java.awt.Color(204, 204, 255));
         Preferencias.setText("Preferências");
         Preferencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -294,7 +340,7 @@ public class Design extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLeftDirecional, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Preferencias))
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,7 +349,7 @@ public class Design extends javax.swing.JFrame {
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLeftDirecional))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(Preferencias)
                 .addGap(18, 18, 18)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -345,11 +391,17 @@ public class Design extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

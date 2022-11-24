@@ -76,6 +76,11 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        jTabbedPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jTabbedPane1.setForeground(new java.awt.Color(255, 255, 255));
+
+        tabela.setBackground(new java.awt.Color(102, 102, 102));
+        tabela.setForeground(new java.awt.Color(255, 255, 255));
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -99,6 +104,8 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabela.setGridColor(new java.awt.Color(0, 0, 0));
+        tabela.setInheritsPopupMenu(true);
         jScrollPane1.setViewportView(tabela);
         if (tabela.getColumnModel().getColumnCount() > 0) {
             tabela.getColumnModel().getColumn(0).setResizable(false);
@@ -107,7 +114,9 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Atalhos", jScrollPane1);
 
+        jTextArea1.setBackground(new java.awt.Color(102, 102, 102));
         jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
         jTextArea1.setText("           Adição ( + ) : Dez Mais Sete                      -> 10 + 7  \n     Subtração ( - ) : Dez Menos Três                   -> 10 - 3    \nMultiplicação ( x ) : Doze Vezes Quatro              -> 12 x 4\n          Divisão ( ÷ ) : Onze Dividido por Três       -> 11 ÷ 3\n   Radiciação (√ ) : Raiz Doze de Um                 -> 12 √ 1\n Potenciação  ( ^ ) : Dez elevado a Dois             -> 10 ^ 2");
         jScrollPane2.setViewportView(jTextArea1);
@@ -118,14 +127,14 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -139,7 +148,7 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
         );
 
         pack();

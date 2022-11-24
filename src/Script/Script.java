@@ -24,20 +24,27 @@ public class Script {
     }
 
     public void ResolverEquacao(String eq){
-        
         // Método que adiciona os valores corretamento no ArrayList e resolve as expressões a partir disso
+        
         
         equacao = eq.trim().replaceAll("÷", "/").replaceAll("x", "*").replaceAll(",", ".");
         // Formatar a equacao para existir apenas símbolos que o Java entende para resolver as expressões
+        
+  
         
         while(equacao.contains("  ")){
             // Tratar erro de espaços duplos, tornando a expressão com apenas espaços únicos
             equacao = equacao.replace("  ", " ");
         }
+      
     
         String eqAux = equacao; // variavel auxiliar para ser usada na implementação dos valores no arraylist
          
         while(true){ // Criação do cliclo infinito 
+            
+            if(eqAux.isEmpty()){
+            break;
+        }
             
             String aux = eqAux.substring(0, 1); // Outra variavel auxiliar, que recebe a primeira posição da String  
             if(aux.equals(" ")){
@@ -94,12 +101,15 @@ public class Script {
             
             Design d = new Design(); // Criação do objeto da classe Design
             
-            setRespostaEquacao(d.FormatarNumeroNaoDecimal(listaNumerosOperadores.get(0)));
+            respostaEquacao = listaNumerosOperadores.get(0); // resposta da expressão
+            
+            setRespostaEquacao(d.FormatarNumeroNaoDecimal(respostaEquacao));
             /*
             A variavel "respostaEquacao" da classe Design ganha o valor formatado da posição 0 do ArrayList, que ao fim das contas, é a resposta da expresão
             */
   
             listaNumerosOperadores.clear(); // ao fim de tudo, o array é limpo, esperando uma nova entrada do usuário
+            
         }
          
         
@@ -112,8 +122,7 @@ public class Script {
         if(eq.equals("")){
             // Se a equação estiver vazia de inicio, o array é limpo e a mensagem de erro aparece
             JOptionPane.showMessageDialog(null, "Não existe expressão para fazer a conta!");
-            listaNumerosOperadores.clear();
-            ResolverEquacao(eq); // Ao retornar uma String vazia para o método "ResolverEquacao", o texto do painel continuará vazio
+        
         }
         else{
             String eqFinal = eq.trim(); // Variavel que recebe o valor da String do parametro
@@ -142,30 +151,25 @@ public class Script {
             }
         
   
-        String tratamentoEq = eqFinal; // variavel auxiliar para tratar os erros]
+        String tratamentoEq = eqFinal.trim(); // variavel auxiliar para tratar os erros]
         
         
         //Substituir todos os operadores por "|" para ter um tratamento de erro mais fácil
         
-
-        tratamentoEq = tratamentoEq.replaceAll("\\+", "|");
         tratamentoEq = tratamentoEq.replaceAll("x", "|");
-        tratamentoEq = tratamentoEq.replaceAll("\\*", "|");
         tratamentoEq = tratamentoEq.replaceAll("√", "|");
         tratamentoEq = tratamentoEq.replaceAll(",", "|");
         tratamentoEq = tratamentoEq.replaceAll("\\^", "|");
+        tratamentoEq = tratamentoEq.replaceAll("\\+", "|");
+        tratamentoEq = tratamentoEq.replaceAll("÷", "|");
         
-        if(tratamentoEq.startsWith("|")){
-            // Se por algum motivo a expressão inicar com um operador por causa de algum bug, a String é atualizada a partir da proxima posição
-            tratamentoEq = tratamentoEq.substring(1);
-        }
-       
-        
-        
-                
-        if(tratamentoEq.contains(" |  | ") || tratamentoEq.startsWith("|") || tratamentoEq.endsWith("|") || tratamentoEq.contains(" - ")){
+        if(tratamentoEq.contains(" |  | ") 
+        || tratamentoEq.startsWith("|") 
+        || tratamentoEq.endsWith("|")
+        || tratamentoEq.endsWith("-")){
             // Conferindo todas as possibilidades de erro nas expressões, inclusive se existe algum " - " com espaços atrás e na frente.
             JOptionPane.showMessageDialog(null, "Expressão Inválida!");
+            ResolverEquacao("");
         }
         else{
             ResolverEquacao(eqFinal); // Com tudo dando certo, a String original é levada para ser resolvida
