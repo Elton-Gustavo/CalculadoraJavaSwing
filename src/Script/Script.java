@@ -7,7 +7,7 @@ import java.util.ArrayList; // Importação do ArrayList
 import javax.swing.JOptionPane; // Importação do "JOP", que será usado para mensagens de erro
 
 public class Script {
-    
+   
     ArrayList <String> listaNumerosOperadores = new ArrayList(); // Declaração do ArrayList
     
     String equacao; // Declaração da variavel equacao
@@ -107,6 +107,8 @@ public class Script {
             /*
             A variavel "respostaEquacao" da classe Design ganha o valor formatado da posição 0 do ArrayList, que ao fim das contas, é a resposta da expresão
             */
+            
+            
   
             listaNumerosOperadores.clear(); // ao fim de tudo, o array é limpo, esperando uma nova entrada do usuário
             
@@ -116,13 +118,13 @@ public class Script {
         
     }
     
-    public void TratamentoDeErro(String eq){
+    public String TratamentoDeErro(String eq){
         // Método usado para fazer o tratamento de erro da expressão.
         
         if(eq.equals("")){
             // Se a equação estiver vazia de inicio, o array é limpo e a mensagem de erro aparece
             JOptionPane.showMessageDialog(null, "Não existe expressão para fazer a conta!");
-        
+            ResolverEquacao("");
         }
         else{
             String eqFinal = eq.trim(); // Variavel que recebe o valor da String do parametro
@@ -170,14 +172,14 @@ public class Script {
             // Conferindo todas as possibilidades de erro nas expressões, inclusive se existe algum " - " com espaços atrás e na frente.
             JOptionPane.showMessageDialog(null, "Expressão Inválida!");
             ResolverEquacao("");
+            
         }
         else{
             ResolverEquacao(eqFinal); // Com tudo dando certo, a String original é levada para ser resolvida
+            return eqFinal;
         }
         }
-        
-        
-        
+        return "";
     }
     
    

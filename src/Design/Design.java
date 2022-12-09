@@ -9,20 +9,13 @@ public class Design extends javax.swing.JFrame {
     Script sc; //Declaração variavel de acesso a classe Script
     String textoPainel; //Declaração variavel que guarda o texto do painel
 
-    public void zerarPainel(){
-        // Método utizado para deixar o painel da calculadora em branco.
-        painel.setText("");
-        painel.requestFocus();
-                
-    }
-    
-    
-
     public Design() {
         initComponents();
         sc = new Script(); //Criação do Objeto da classe Script
-        this.setLocationRelativeTo(null); //Deixar Centralizado no meio o JFrame ao abrir
+        this.setLocationRelativeTo(null); //Deixar Centralizado no meio o JFrame ao abrir    
         painel.requestFocus();
+        
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -30,7 +23,6 @@ public class Design extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
-        painel = new javax.swing.JTextField();
         KeyVirgula = new javax.swing.JButton();
         btn0 = new javax.swing.JButton();
         btnDouble0 = new javax.swing.JButton();
@@ -53,6 +45,8 @@ public class Design extends javax.swing.JFrame {
         btnDivisao = new javax.swing.JButton();
         btnLeftDirecional = new javax.swing.JButton();
         Preferencias = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        painel = new javax.swing.JTextArea();
         menu = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,17 +56,6 @@ public class Design extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(102, 102, 102));
         background.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Yu Gothic Medium", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         background.setForeground(new java.awt.Color(255, 255, 255));
-
-        painel.setEditable(false);
-        painel.setBackground(new java.awt.Color(255, 255, 255));
-        painel.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        painel.setForeground(new java.awt.Color(0, 0, 0));
-        painel.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        painel.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                painelKeyPressed(evt);
-            }
-        });
 
         KeyVirgula.setBackground(new java.awt.Color(0, 0, 0));
         KeyVirgula.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -258,6 +241,7 @@ public class Design extends javax.swing.JFrame {
         btnRaiz.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         btnRaiz.setForeground(new java.awt.Color(255, 255, 255));
         btnRaiz.setText("√");
+        btnRaiz.setFocusable(false);
         btnRaiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRaizActionPerformed(evt);
@@ -285,7 +269,7 @@ public class Design extends javax.swing.JFrame {
         });
 
         Preferencias.setBackground(new java.awt.Color(0, 0, 0));
-        Preferencias.setForeground(new java.awt.Color(204, 204, 255));
+        Preferencias.setForeground(new java.awt.Color(255, 255, 255));
         Preferencias.setText("Preferências");
         Preferencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,10 +277,31 @@ public class Design extends javax.swing.JFrame {
             }
         });
 
+        painel.setEditable(false);
+        painel.setColumns(20);
+        painel.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        painel.setLineWrap(true);
+        painel.setToolTipText("");
+        painel.setWrapStyleWord(true);
+        painel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        painel.setDragEnabled(true);
+        painel.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                painelKeyPressed(evt);
+            }
+        });
+        jScrollPane1.setViewportView(painel);
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLeftDirecional, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
             .addGroup(backgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,23 +340,22 @@ public class Design extends javax.swing.JFrame {
                             .addComponent(btnRaiz, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnDivisao, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLeftDirecional, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(Preferencias))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLeftDirecional))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(btnLeftDirecional))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Preferencias)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnC, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -382,7 +386,7 @@ public class Design extends javax.swing.JFrame {
                         .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnDouble0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn0, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setJMenuBar(menu);
@@ -400,13 +404,21 @@ public class Design extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+   
+    public void zerarPainel(){
+        // Método utizado para deixar o painel da calculadora em branco.
+        painel.setText("");
+        painel.requestFocus();
+                
+    }
+    
     public String FormatarNumeroNaoDecimal(String resultado){  
         /*
         Método usado para tirar o ".0" de números naturais, ex: 10.0 virar 10
@@ -416,6 +428,28 @@ public class Design extends javax.swing.JFrame {
         } 
         return resultado;
 }
+    
+    public void attPainel(String s){
+        int tamanhoS = s.length();
+        if(tamanhoS > 17){
+            while(tamanhoS > 17){
+            painel.setText(s.substring(0, 17));
+            painel.setText(painel.getText() + "\n");
+            s = s.substring(17);
+            tamanhoS = s.length();
+        }
+        }else{
+            painel.setText(s);
+        }
+        
+    }
+    
+    
+    public void Keyvirgula(){
+        //Código para adicionar o botão desjado na String da expressão no painel
+        textoPainel = painel.getText();
+        painel.setText(textoPainel + ",");
+    }
     
     public void KeyDivisao(){
         //Codigo para adicionar o botão desejado na String da expressão no painel
@@ -446,10 +480,13 @@ public class Design extends javax.swing.JFrame {
         //Codigo para adicionar o botão desejado na String da expressão no painel
         textoPainel = painel.getText().trim();
         sc.TratamentoDeErro(textoPainel);
-        
         painel.setText(sc.getRespostaEquacao());
-            
+        
+        
+          
     }
+    
+    
     
     public void KeyRaiz(){
         //Codigo para adicionar o botão desejado na String da expressão no painel
@@ -481,7 +518,7 @@ public class Design extends javax.swing.JFrame {
         Testando se existe algo digitado para não gerar erro de Index
         */
         textoPainel = painel.getText();
-        if(textoPainel.length() != 0){
+        if(!painel.getText().isEmpty()){
             painel.setText(textoPainel.substring(0, textoPainel.length() - 1));
         }
     }
@@ -498,7 +535,8 @@ public class Design extends javax.swing.JFrame {
         String conta = textoPainel.substring(ultimoEspaco + 1, textoPainel.length());
         if(textoPainel.equals("0") || conta.equals("0")){}
         else{
-            painel.setText(textoPainel + "0");
+            String textoAdd = textoPainel + "0";
+            attPainel(textoAdd);
         }
         
         
@@ -715,6 +753,7 @@ public class Design extends javax.swing.JFrame {
         else if(evt.getKeyCode() == evt.VK_P || evt.getKeyCode() == evt.VK_P)KeyPotencia();
         else if(evt.getKeyCode() == evt.VK_C || evt.getKeyCode() == evt.VK_C)KeyCE();
         else if(evt.getKeyCode() == evt.VK_LEFT)KeyLeftBtn();
+        else if(evt.getKeyCode() == evt.VK_DECIMAL) KeyVirgula();
         else if(evt.getKeyCode() == evt.VK_NUMPAD0 || evt.getKeyCode() == KeyEvent.VK_0)b0();
         else if(evt.getKeyCode() == evt.VK_NUMPAD1 || evt.getKeyCode() == KeyEvent.VK_1)b1();
         else if(evt.getKeyCode() == evt.VK_NUMPAD2 || evt.getKeyCode() == KeyEvent.VK_2)b2();
@@ -896,7 +935,8 @@ public class Design extends javax.swing.JFrame {
     private javax.swing.JButton btnPotencia;
     private javax.swing.JButton btnRaiz;
     private javax.swing.JButton btnVezes;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuBar menu;
-    private javax.swing.JTextField painel;
+    private javax.swing.JTextArea painel;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,7 +24,7 @@ public class TelaAtalhosDeTeclado extends javax.swing.JFrame {
          * adicionar uma linha com o atalho e sua descrição.
          */
         
-        modelo = (DefaultTableModel) tabela.getModel();
+         modelo = (DefaultTableModel) tabela.getModel();
         
          String atalho = "p";
          String desc = "Para adicionar o sinal ^";
